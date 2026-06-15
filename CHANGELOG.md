@@ -6,6 +6,25 @@ every upgrade bumps `VERSION`, adds an entry here, and must pass
 
 Format follows *Keep a Changelog*; versions follow semantic versioning.
 
+## [2.1.0] — 2026-06-15
+
+### Added
+- **`AGENTS.md` at the repo root**, so the kit is discovered *natively* on all
+  three target platforms. Google Jules reads `AGENTS.md` per task; OpenAI Codex,
+  Cursor, and Gemini CLI read it too — alongside the existing `SKILL.md` that
+  Claude and Codex auto-load. One repo now works first-class on Claude, Codex,
+  and Jules.
+
+### Changed
+- **Install + "Staying updated" instructions rewritten** in `README.md` and
+  `START_HERE.md` for Claude (Code + Cowork), Codex, and Jules: clone straight
+  into the platform's skills folder (`~/.claude/skills`, `~/.agents/skills`),
+  connect the repo for Jules, and stay current with one `git pull` /
+  `python3 scripts/update.py` (Jules updates automatically by re-cloning).
+- Refreshed the "What's inside" map to list `AGENTS.md`, `VERSION`,
+  `CHANGELOG.md`, `update_source.txt`, and the `lint_tex.py` / `selfcheck.py` /
+  `update.py` scripts.
+
 ## [2.0.0] — 2026-06-15
 
 ### Fixed

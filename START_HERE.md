@@ -13,27 +13,33 @@ Pick the assistant you use and copy-paste:
 
 **Claude Code**
 ```bash
-mkdir -p ~/.claude/skills
-cp -R make-lecture-kit ~/.claude/skills/
+git clone https://github.com/saurabh1604/make-lecture-kit ~/.claude/skills/make-lecture-kit
 ```
 
 **OpenAI Codex**
 ```bash
-mkdir -p ~/.agents/skills
-cp -R make-lecture-kit ~/.agents/skills/
+git clone https://github.com/saurabh1604/make-lecture-kit ~/.agents/skills/make-lecture-kit
 ```
 
-**Claude Cowork**
-Add the `make-lecture-kit` folder as a skill (use the in-app "add skill"
-flow) — or simply drag the folder into your chat.
+**Google Jules**
+Connect the `saurabh1604/make-lecture-kit` repo in Jules and ask away — it reads
+the repo's `AGENTS.md` automatically. (Or drop the folder into your own repo.)
 
-**Using Google Jules, Cursor, or another agent?**
-The kit is platform-neutral — put the folder wherever that agent reads skills,
-or just point it at the folder, and ask the same way.
+**Claude Cowork**
+Add the `make-lecture-kit` folder as a skill (Settings → Capabilities, "add
+skill") — or simply drag the folder into your chat.
+
+**Cursor or another agent?**
+Clone it, or drop the folder into your project; the root `AGENTS.md` and
+`SKILL.md` tell the agent what to do.
 
 **Don't want to install anything?**
 Just drop the whole `make-lecture-kit` folder into a chat with Claude, Codex,
 Jules, or any agent and ask away.
+
+> No git? Download the ZIP from
+> [the repo page](https://github.com/saurabh1604/make-lecture-kit) and unzip it
+> where the command above would have cloned it.
 
 ## Use it
 
@@ -59,6 +65,19 @@ Everything lands in a new folder, `output/<your-topic>/`:
 If the PDF didn't compile on your machine (no LaTeX installed), the assistant
 will say so plainly and tell you exactly what to do next — your
 `companion.tex` source and figures are still there, ready to compile.
+
+## Stay updated
+
+Your teacher ships improvements over time. Getting the latest takes one command,
+and your own work in `output/` is kept:
+
+```bash
+cd ~/.claude/skills/make-lecture-kit     # or wherever you cloned it
+git pull                                  # or:  python3 scripts/update.py
+```
+
+On **Google Jules** there's nothing to do — it always runs the latest from the
+repo. To just peek at what's new: `python3 scripts/update.py --check`.
 
 ## If something goes wrong
 
