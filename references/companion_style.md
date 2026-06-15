@@ -23,7 +23,7 @@ quality bar — when in doubt, match it. The figure helper is
 | Footer | centred page number |
 | Title banner (page 1) | full-width dark-navy `tcolorbox` (`#21355E`), white text: tracked uppercase label → very large bold title → light subtitle → thin white rule → small meta line |
 | Intro | one paragraph **"How to use this companion."** explaining the colour code |
-| Sections | sans, bold, navy, **numbered** (`1  The big idea: …`), horizontal rule beneath |
+| Sections | sans, bold, navy, **numbered** (`1  The big idea: …`), horizontal rule beneath; **each new top-level topic starts on a fresh page** (automatic via the template's `\sectionbreak` — the first section stays under the banner, every later one clears the page so a topic never splits across a break) |
 | Body | justified serif (lmodern), `parskip` spacing, `microtype`, math via `amsmath`, tables via `booktabs` |
 | Figures | full-textwidth matplotlib PNGs, centred, **bold title baked into the plot** |
 

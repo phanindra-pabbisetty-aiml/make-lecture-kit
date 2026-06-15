@@ -158,6 +158,14 @@
 \titlespacing*{\section}{0pt}{16pt}{8pt}
 \titlespacing*{\subsection}{0pt}{12pt}{4pt}
 
+% Each top-level TOPIC starts on a fresh page, so a heading never lands at the
+% bottom of a page with its content spilling across the break. We skip the break
+% before the FIRST section only — it continues under the title banner — using a
+% one-shot flag, which is robust no matter when titlesec steps the section
+% counter. Every section after the first clears to a new page.
+\newif\ifmlkfirstsec \mlkfirstsectrue
+\newcommand{\sectionbreak}{\ifmlkfirstsec\mlkfirstsecfalse\else\clearpage\fi}
+
 % =============================================================================
 %  PILL-TAB CALLOUTS  —  the FIVE taxonomy boxes
 %  Shared look: enhanced + breakable, rounded corners, boxrule 0.6pt, very light

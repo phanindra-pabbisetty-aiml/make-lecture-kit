@@ -6,6 +6,18 @@ every upgrade bumps `VERSION`, adds an entry here, and must pass
 
 Format follows *Keep a Changelog*; versions follow semantic versioning.
 
+## [2.2.0] — 2026-06-15
+
+### Fixed
+- **Each top-level topic now starts on a fresh page in the companion PDF.** A
+  section heading could previously land at the bottom of a page with its content
+  spilling across the break, splitting a topic in two. The template now clears
+  the page before every section after the first (the first stays under the title
+  banner) via a one-shot `\sectionbreak` flag in `templates/companion.tex` —
+  robust regardless of titlesec's counter timing, and verified to coexist with
+  the breakable `tcolorbox` callouts and `fancyhdr`. Documented in
+  `references/companion_style.md` (visual contract).
+
 ## [2.1.0] — 2026-06-15
 
 ### Added
