@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""House matplotlib style for ISM Companion figures.
+r"""House matplotlib style for ISM Companion figures.
 
 This module is the single source of truth for what the companion's figures
 look like. Per-lecture figure scripts (the little ``*.py`` files that live in

@@ -6,6 +6,15 @@ every upgrade bumps `VERSION`, adds an entry here, and must pass
 
 Format follows *Keep a Changelog*; versions follow semantic versioning.
 
+## [2.2.1] — 2026-06-15
+
+### Fixed
+- **`scripts/figstyle.py` no longer emits `SyntaxWarning: invalid escape sequence
+  '\i'`.** The module docstring contains LaTeX commands (`\includegraphics`) but
+  was not a raw string, so Python warned on every run (seen during `selfcheck` /
+  `publish.sh`) and a future Python would make it a hard `SyntaxError`. The
+  docstring is now an `r"""…"""` raw string. No behaviour change.
+
 ## [2.2.0] — 2026-06-15
 
 ### Fixed
